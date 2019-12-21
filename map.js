@@ -24,7 +24,7 @@ class Map{
                 this.station = results[i];
                 this.marker = L.marker([this.station.position.lat,this.station.position.lng]);
                 this.marker.addTo(this.mymap);
-				/*console.log(this.station)*/
+				console.log(this.station)
                 }
         })
     } //-- end of dispaly
