@@ -1,0 +1,533 @@
+@font-face {
+  font-family: 'Kaushan Script';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Kaushan Script'), local('KaushanScript-Regular'), url(https://fonts.gstatic.com/s/kaushanscript/v8/vm8vdRfvXFLG3OLnsO15WYS5DG74wNI.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+ 
+ @font-face {
+  font-family: 'RobotoHobbees';
+  font-style: normal;
+  font-weight: 400;
+  src: local('RobotoHobbees'), local('RobotoHobbees-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+
+body{
+	background-color: #F8F8F8;
+	margin: 0;
+	padding: 0;
+	}
+	
+header{
+   	display:flex;
+	flex-direction: row;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	align-items: second baseline;
+	z-index:20;
+	top:0;
+    height: auto;
+	width:100vw;
+    position:fixed;
+	background-color:white;
+	box-shadow: 2px 2px 10px #009933;
+	}
+	
+header img {
+    margin-left:70px;
+	margin-top: 10px;
+	}
+	
+#menu-titre h2{
+	font-family: 'Kaushan Script';
+	padding-left: 150px;
+    font-size: 2.5em;
+    text-decoration: none;
+    color: #009933;/*green*/
+	margin-top: 9px;
+	text-align: center;
+	}
+	
+	
+header ul {
+    list-style-type: none;
+	margin-top: 30px;
+	padding-right: 35px;
+	display: flex;
+	}
+
+header ul a {
+    margin: 0px 22px 0px 0px;
+    text-decoration: none;
+	font-size: 1.2em;
+	font-family: 'Tahoma';
+	color: green;
+	}
+/****************************************************INTRO************************************************************/ 
+	
+#how{
+	border-left: 2px solid #E8E8E8;
+	border-right: 2px solid #E8E8E8;
+	border-bottom: 2px solid #E8E8E8;
+	background: #F0F0F0;
+	border-radius:7px;
+	padding: 40px 0;
+	width: 98%;
+	height: 100%;
+	margin: 130px auto 0px auto;
+    }
+
+section #titlehow h1{
+	font-size:1.9em;
+	text-align: center;
+	font-family: 'RobotoHobbees';
+	color: green;
+ 	}
+	
+section #subtitle{
+	text-align: center;
+	font-size: 1.2em;
+	font-family: 'RobotoHobbees';
+	color: green;
+	line-height: 1.3em;
+	}
+	 
+
+
+/**********Mode d'emploi: SLIDER**************/
+#sliderContainer {
+    height:40vw;
+	width: 65%;
+	position: relative;
+	margin:10px 180px;
+   }
+
+.slideElement{
+    top: 0;
+    visibility: hidden;
+    margin: 0;
+    height:100%;
+	position: absolute;/*sinon ca decle le html*/
+    }
+   
+.slideElement img{
+    height: 100%;
+	box-shadow:5px 5px 5px grey;  
+	border-radius: 7px; 
+   }
+.visible{
+    visibility: visible;
+  /*  position: absolute;*/
+    top: 0;
+    }
+
+#mousecontrolblock{
+	display: flex;
+    justify-content: center;
+	}
+
+#play{
+	font-size: 3.5em;
+    color : #15965f;
+	margin:5px 40px -20px 40px;
+	align-items: center;
+    display:none;
+    }
+  
+  
+#pause, #prev, #next{
+   font-size: 3.5em;
+   color : #15965f;
+   margin:5px 40px -20px 40px;
+   display: flex;
+   align-items: center;
+   }
+ 
+
+/******************************************************* Aplication(Où trouver un vélo) ***********************************************/
+ #search {
+	border-left: 2px solid #E8E8E8;
+	border-right: 2px solid #E8E8E8;
+	border-bottom: 2px solid #E8E8E8;
+	background: #F0F0F0;
+	border-radius:7px;
+	padding: 40px 0;
+	width: 98%;
+	height: 100%;
+	margin: 30px auto;
+	}
+		
+	
+/*****MAP****/	
+
+.map-container {
+    padding: 50px;
+    height : 600px;
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+#mapid { 
+    height: 600px;
+    width : 65%;
+    justify-content: center;
+  /*margin: auto;*/
+    border-radius: 7px;
+	box-shadow:0 2px 10px #009933; 
+	z-index: 1;
+}
+
+
+     
+
+/******************************************************* Confiramation de la réservation **********************************************/
+#booking {
+	border-left: 2px solid #E8E8E8;
+	border-right: 2px solid #E8E8E8;
+	border-bottom: 2px solid #E8E8E8;
+	background: #F0F0F0;
+	border-radius:7px;
+	padding: 40px 0;
+	width: 98%;
+	height:100%;
+	margin: 30px auto;
+	
+	}
+
+section #titlebooking h1{
+	font-size:1.9em;
+	text-align: center;
+	font-family: 'RobotoHobbees';
+	color: #009933;
+ 	}
+	
+/******************************************************* FOOTER **********************************************/
+footer{
+   	height: 100px;
+	width:auto;
+	text-align: center;
+   	background-color:lightgrey;
+	box-shadow: -3px -4px 8px #009933;
+   	}
+	
+footer p{
+	padding-top: 28px;
+	text-align: center;
+    font-size:1.4em;
+	font-family: 'Kaushan Script';
+	color: green;
+    }
+
+/******************************************************************MEDIA QUERRIES*****************************************************************/
+
+
+/**-portable max 480px-*/
+
+@media all and (max-width: 480px){
+	header{
+	display:block;
+	text-align:center;
+	margin-bottom:5px;
+	box-shadow: 1px 1px 5px #009933;
+	}
+	
+	header img {
+    margin-left:0px;
+	margin-top: 5px;
+	transform: scale(0.7);/*resize logo*/
+  	}
+
+	
+#menu-titre h2{
+	font-family: 'Kaushan Script';
+	padding-left: 0px;
+    font-size: 2em;
+   	margin-top: 0px;
+	}
+	
+	
+header ul {
+ 	margin-top: -10px;
+	margin-right:0px;
+	padding-right: 0px;
+	}
+	
+	
+header ul a {
+    padding: 0px 19px 0px 0px;
+    text-decoration: none;
+	text-align:center;
+    font-size: 1.1em;
+	font-weight: 500;
+	font-family: 'RobotoHobbees';
+	}
+	
+	#how{
+	padding-top: 1px;
+	margin-top: 200px;
+	margin-bottom: 50px;
+	}
+	
+	#search,  #booking {
+	padding-top: 1px;
+	margin: 50px auto;
+	}
+		
+	section #titlehow h1 {
+	font-size: 1.4em;
+	}
+	
+section #subtitle{
+	font-size: 1.1em;
+	line-height: 1.5em;
+	}
+	
+	#slides{
+	max-height: 250px;
+	width: 90%;
+	margin-top : 18px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	}
+
+	
+.controls{
+    padding: 5px 0 5px 0;
+    font-size: 14px;
+	margin: 20px 20px 10px 15px;
+    width:85px;
+    height:38px;
+    }
+
+#search {
+	flex-flow: column wrap;
+}
+ .map {
+	width: 93%;
+	}
+	
+ .formulaire {
+	width: 93%;
+	margin-left: 25px;
+	}
+
+.formulaire form {
+    margin-left: 0px; 
+   }
+   
+}
+
+
+
+/*-petits portables MEDIA QUERRIES: max 397px-*/
+@media all and (max-width: 397px){ 
+#how {
+	margin-top: 215px;
+	margin-bottom: 50px;
+	}
+	
+header ul li:nth-of-type(2) {
+    padding-top: 10px;
+	}
+	
+header ul li:nth-of-type(1), header ul li:nth-of-type(3){
+   	text-align: center;
+        }
+
+#search {
+	flex-flow: column wrap;
+}
+ .map {
+	width: 90%;
+	}
+	
+.formulaire form {
+	width:90%;
+	margin-left:-10px;
+	}  
+	
+.sent {
+	padding:8px 8px;
+    margin: 10px 30px 5px 30px;
+		font-size: 0.9em;
+    }
+
+.formulaire form h2{
+	font-size:1.2em;
+	margin-top: 18px; 
+	margin-bottom:10px;
+   }
+
+#myCanvas{
+	width: 90%;
+  margin: 3px 20px 10px 18px;
+    }
+	  
+	
+}
+
+
+/*-tablettes MEDIA QUERRIES: 480px -720px-*/
+
+
+@media all and  (min-width: 480px) and (max-width: 720px){ 
+
+	header{
+	display:block;
+	text-align:center;
+	margin-bottom:5px;
+	box-shadow: 1px 1px 5px #009933;
+	}
+	
+	header img {
+    margin-left:0px;
+	margin-top: 5px;
+	transform: scale(0.8);/*resize logo*/
+  	}
+
+	
+#menu-titre h2{
+	padding-left: 0px;
+    font-size: 2.2em;
+   	margin-top: 2px;
+	margin-bottom: 0
+	}
+	
+		
+header ul {
+ 	margin-top: 10px;
+	
+	}
+	
+	
+header ul a {
+    text-decoration: none;
+	margin:20px;
+	text-align:center;
+    font-size: 1.3em;
+	font-weight: 500;
+	font-family: 'RobotoHobbees';
+	}
+	
+	#how {
+	padding-top: 1px;
+	margin-top: 220px;
+	margin-bottom:50px;
+	}
+	
+	section #titlehow h1 {
+	font-size: 1.7em;
+	}
+	
+section #subtitle{
+	font-size: 1.2em;
+	line-height: 1.5em;
+	}
+	
+	#slides{
+	max-height: 380px;
+	width: 90%;
+	margin-top : 18px;
+	margin-bottom: 0px;
+	margin-left: 28px;
+	}
+	
+#search {
+	flex-flow: column wrap;
+}
+ .map {
+	width: 93%;
+	}
+	
+ .formulaire {
+	width: 93%;
+		}
+
+.formulaire form {
+    margin-left: 0px; 
+   }
+	
+	
+	
+}
+
+/*-tablettes MEDIA QUERRIES: min 720px-*/
+@media all and (min-width: 720px)and (max-width: 1070px){
+	header{
+	display:block;
+	text-align:center;
+	margin-bottom:5px;
+	box-shadow: 1px 1px 5px #009933;
+	}
+	
+	header img {
+    margin-left:0px;
+	margin-top: 8px;
+  	}
+	
+#menu-titre h2{
+	padding-left: 0px;
+    margin-top: 2px;
+	margin-bottom: 0
+	}
+
+		
+header ul li:nth-child(1) , header ul li:nth-child(3){
+   	margin-left: -8px;
+	}
+		
+header ul {
+ 	margin-top: 13px;
+	font-size: 1.2em;
+	margin-left: 80px; 
+	}
+	
+	header ul a {
+    text-align:center;
+	align-items:center;
+    margin: 0 50px 0 50px ;
+	font-family: 'RobotoHobbees';
+	}
+
+	#how {
+	padding-top: 1px;
+	margin-top: 220px;
+	margin-bottom: 50px;
+	}
+	
+	
+section #subtitle{
+	font-size: 1.2em;
+	line-height: 1.5em;
+	}
+	
+	#slides{
+	max-height: 380px;
+	width: 90%;
+	margin-top : 18px;
+	margin-bottom: 10px;
+	margin-left: 42px;
+	}
+
+#search {
+	flex-direction: column;
+	}
+		 
+ .map {
+	width: 93%;
+	}
+	
+ .formulaire {
+	width: 93%;
+	display:flex;
+	justify-content: center;
+	}
+
+
+}
+
+
+/*----END---*/

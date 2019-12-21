@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+   integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"/>
+   <link rel="icon" type="image/jpg" href="Images/icon1.jpg" sizes="32x32"/>
+   <title>Location de vélo à Mulhouse</title>
+   <meta name="description" content="La location de vélo à à Mulhouse. Page en HTML5, CSS3 et Javascript." />
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   
+ </head>
+ 
+ 
+   <!--******************** Menu ********************-->
+<body>
+  <header>
+     <div id="logo">
+	 <a href="#top"><img src="Images\bike-logo.png"></a> 
+     </div>
+	  
+     <div id = "menu-titre">
+	     <h2>Mulhouse à vélo</h2>
+	 </div>
+	  
+      <nav> 
+	    <ul>
+	     <li> <a class="nav-link" href="#how">Mode d'emploi</a></li>
+	     <li> <a class="nav-link" href="#search">Aplication</a></li>
+         <li> <a class="nav-link" href="#booking">Votre réservation</a></li>
+       </ul>
+      </nav>
+	   
+   </header> 
+   <!--******************** Diaporama(Mode d'emploi) ********************-->
+<main> 
+ 
+ <section id="how">
+		<div id="titlehow">
+			<h1>BIKE ROUTE: la liberté de se déplacer!</h1>
+		</div>	
+			<p id="subtitle">
+			 BIKE ROUTE c’est 240 vélos en libre service répartis dans 40 stations de la ville de Mulhouse. C’est une solution 
+	         simple pour se déplacer rapidement. <br>
+	         Accessible 24h/24 365 jours par an, le BIKE ROUTE allie simplicité et
+	         respect de l’environnement.
+			</p>
+    
+	  
+   <div id = "sliderContainer">
+        <figure class ="slideElement"><img src ='Images/diapo1.jpg'></figure>
+		<figure class ="slideElement"><img src ='Images/diapo2.jpg'></figure>
+        <figure class ="slideElement"><img src ='Images/diapo3.jpg'></figure>
+        <figure class ="slideElement"><img src ='Images/diapo4.jpg'></figure>
+        <figure class ="slideElement"><img src ='Images/diapo5.jpg'></figure>
+        <figure class ="slideElement"><img src ='Images/diapo6.jpg'></figure>
+    </div>	
+
+	<div id= "mousecontrolblock"> 
+		<div id="prev">
+        <i class="far fa-arrow-alt-circle-left"></i></i></div>
+                         
+        <div id="play">
+        <i class="far fa-play-circle"></i></div>
+			  
+        <div id="pause">
+        <i class="far fa-pause-circle"></i></div>
+			
+	    <div id="next">
+        <i class="far fa-arrow-alt-circle-right"></i></div>
+              
+	</div>  
+       
+ </section>  
+ 
+	  <!--******************** Aplication(Où trouver un vélo) ********************-->
+   <section id="search">
+   		 <div class="map-container">
+		 <div id="mapid"></div>
+	
+	    
+   </section>
+   
+   
+	  <!--******************** Confiramation de la réservation ********************-->
+  
+    <section id="booking">
+	    <div id="titlebooking">
+		<h1>Votre réservation:</h1>
+		</div>	
+   </section>
+</main>
+    	  <!--******************** Footer ***********************************************-->
+	  <footer>
+	  <p>© 2019 Aneta LAURENT - Projet 3 OpenClassrooms.</p>
+	  </footer>
+ <script type="text/javascript" src="ajax.js"></script>
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+   
+	     <script type="text/javascript" src="slider.js"></script>
+		 <script type="text/javascript" src="canvas.js"></script>
+		 <script type="text/javascript" src="map.js"></script>
+		 <script type="text/javascript" src="main.js"></script>
+		 
+    </body>
+</html>
