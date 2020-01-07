@@ -5,9 +5,9 @@ class Canvas{
 	this.boundings = this.canvas.getBoundingClientRect();
 
 	this.write = false;
-    this.context.lineWidth = 6; //  line width
+    this.context.lineWidth = 5; //  line width
 	this.context.lineCap = "round";// line with rounded end caps
-	this.context.strokeStyle = "black"//  line color
+	this.context.strokeStyle = "green"//  line color
 	this.context.beginPath();
 	this.context.closePath();
 	this.lastPosition = { x:0 , y:0 };
