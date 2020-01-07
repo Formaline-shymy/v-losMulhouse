@@ -80,9 +80,35 @@
 	  <!--******************** Aplication(Où trouver un vélo) ********************-->
    <section id="search">
    		 <div class="map-container">
-		 <div id="mapid"></div>
-	
-	    
+		  <div id="mapid"></div>
+		 
+		 <div class="form">
+            <div id="infoStation">
+                <h3>Détails de la station <br/> <span id="stationsName"></span></h3>
+                <p>Adresse : <span id="address"></span></p>
+                <p>Nombre de places : <span id="bikestandNumber"></span></p>
+                <p>Nombre de vélos disponibles : <span id="bikeNumber"></span></p>
+                <p>Station est  <span id="stationsStatus"></span></p>
+                <button id="confirmationButton">Confirmer votre choix</button>
+            </div>
+			<div id="idform">
+			 <div class= "identification">
+	           <input id="nom" class= "sent" type="text" required="" placeholder= "Votre nom">
+               <input id="prenom" class= "sent" type="text" required="" placeholder= "Votre prénom">
+		     </div>
+			 
+		     <canvas id="myCanvas"></canvas>
+			   <div id="feather">
+                <img src="Images/pioro.jpg"alt="">
+			   </div>
+			   
+			 <div class="b-block">
+			  <button id="clear" type="button">Effacer la signature</button>
+			  <button id="submit" type="button">Réserver</button>
+			 </div>
+			</div>
+         </div>  
+	    </div>
    </section>
    
    

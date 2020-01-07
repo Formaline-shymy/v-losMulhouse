@@ -164,7 +164,7 @@ section #subtitle{
 /*****MAP****/	
 
 .map-container {
-    padding: 50px;
+    padding: 0px 30px;
     height : 600px;
     display: flex;
     flex-wrap: wrap;
@@ -172,18 +172,118 @@ section #subtitle{
 
 #mapid { 
     height: 600px;
-    width : 65%;
+    width : 55%;
     justify-content: center;
   /*margin: auto;*/
     border-radius: 7px;
 	box-shadow:0 2px 10px #009933; 
 	z-index: 1;
-}
+    }
+	
+.form{
+	padding-left: 100px;
+	margin-top: -25px;
+	height: 280px;
+	}
+		
+#infoStation{
+	text-align: left;
+	font-size: 1.2em;
+	font-family: 'RobotoHobbees';
+	color: green;
+	line-height: 1.3em;
+    }
+ 
+#confirmationButton{
+	background: green;
+    color: white;
+    margin:0 105px;
+    width:100px;
+    height:45px;
+    border-radius:10px;
+    box-shadow:0 1px 2px lightgrey; 
+    cursor: pointer;	
+	font-family: 'RobotoHobbees';
+	font-size: 15px;
+	text-align:center;
+	border:none;
+	margin-bottom: 50px;
+    }
+	
+#confirmationButton:hover{
+    background: #eee;
+    color: #009933;
+    cursor: pointer;
+    }
+	
+.sent{
+	padding: 10px 10px;
+    margin: -20px 10px 10px 10px;
+    width: 150px;
+    height: 10px;
+    background:#FFFFFF;
+    border-bottom: 1px #F8F8F8;
+    border-top: 1px #F8F8F8;
+    border-left: 1px #F8F8F8;
+    border-right: 1px #F8F8F8;
+    font-family: 'RobotoHobbees';
+    font-size: 0.9em;
+    }
 
+#myCanvas{
+	width: 320px;
+    height: 180px;
+	border:2px solid #F8F8F8;
+	border-radius:2px;
+	margin: 10px 30px 0px 30px;
+	background-color: #FFFFFF;
+	cursor:crosshair;
+	}
+	
+#feather {
+	position:relative;
+    top : -55px;
+    right : -295px;
+    max-width : 9%;
+    overflow: hidden;
+    }
 
-     
+#feather img {
+    width : 100%;
+    }
+	
+.b-block{
+    display: flex;
+    justify-content: center;
+    margin-top:-20px;
+	}
+	
+#submit , #clear {
+	background: green;
+    color: white;
+    margin-right: 20px;
+	margin-left: 20px;
+    width:100px;
+    height:45px;
+    border-radius:10px;
+    box-shadow:0 1px 2px lightgrey; 
+    cursor: pointer;	
+	font-family: 'RobotoHobbees';
+	font-size: 15px;
+	text-align:center;
+	border:none;
+    } 
+	
+#submit:hover, #clear:hover{
+    background: lightgrey;
+    color: #009933;
+    cursor: pointer;
+	}
+	 
+	
+	
 
-/******************************************************* Confiramation de la réservation **********************************************/
+/******************************************************* Confirmation de la réservation **********************************************/
 #booking {
 	border-left: 2px solid #E8E8E8;
 	border-right: 2px solid #E8E8E8;
