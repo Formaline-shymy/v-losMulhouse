@@ -154,9 +154,8 @@ section #subtitle{
 	border-bottom: 2px solid #E8E8E8;
 	background: #F0F0F0;
 	border-radius:7px;
-	padding: 40px 0;
+	padding: 40px 0 60px 0 ;
 	width: 98%;
-	height: 100%;
 	margin: 30px auto;
 	}
 		
@@ -180,24 +179,29 @@ section #subtitle{
 	z-index: 1;
     }
 	
-.form{
-	padding-left: 100px;
+.infoform{
+	padding-left: 20px;
 	margin-top: -25px;
 	height: 280px;
 	}
 		
 #infoStation{
 	text-align: left;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	font-family: 'RobotoHobbees';
 	color: green;
 	line-height: 1.3em;
+	width: 620px;
+	}
+	
+ #stationName, #address {
+    text-transform: lowercase;
     }
- 
-#confirmationButton{
+	
+.confirmbtn{
 	background: green;
     color: white;
-    margin:0 105px;
+    margin:10px 0px -10px 140px;
     width:100px;
     height:45px;
     border-radius:10px;
@@ -207,19 +211,23 @@ section #subtitle{
 	font-size: 15px;
 	text-align:center;
 	border:none;
-	margin-bottom: 50px;
-    }
+	}
 	
-#confirmationButton:hover{
+.confirmbtn:hover{
     background: #eee;
     color: #009933;
     cursor: pointer;
     }
 	
+#idform{
+	margin: 40px;
+	width: 400px;
+    }
+	
 .sent{
 	padding: 10px 10px;
-    margin: -20px 10px 10px 10px;
-    width: 150px;
+    margin: 7px 10px 10px 0px;
+    width: 180px;
     height: 10px;
     background:#FFFFFF;
     border-bottom: 1px #F8F8F8;
@@ -231,19 +239,19 @@ section #subtitle{
     }
 
 #myCanvas{
-	width: 320px;
+	width: 380px;
     height: 180px;
 	border:2px solid #F8F8F8;
 	border-radius:2px;
-	margin: 10px 30px 0px 30px;
+	margin: 5px 0px -32px 0px;
 	background-color: #FFFFFF;
 	cursor:crosshair;
 	}
 	
 #feather {
 	position:relative;
-    top : -55px;
-    right : -295px;
+    top : -30px;
+    right : -330px;
     max-width : 9%;
     overflow: hidden;
     }
@@ -255,10 +263,10 @@ section #subtitle{
 .b-block{
     display: flex;
     justify-content: center;
-    margin-top:-20px;
-	}
+	margin-left: -20px;
+    }
 	
-#submit , #clear {
+.reservationbtn {
 	background: green;
     color: white;
     margin-right: 20px;
@@ -274,14 +282,50 @@ section #subtitle{
 	border:none;
     } 
 	
-#submit:hover, #clear:hover{
+.reservationbtn:hover {
     background: lightgrey;
     color: #009933;
     cursor: pointer;
+	}	
+	
+.confirmbtn, .reservationbtn,  {
+	animation: apparition 3s linear;
+    }
+	
+	@keyframes apparition
+{
+	0%
+	{
+		opacity: 0;
 	}
-	 
-	
-	
+	100%
+	{
+		opacity: 1;
+	}
+}
+
+
+.visible{
+	display: block;
+    }
+
+.invisible{
+	animation: disparition 1s linear;
+	display: none;
+    }
+
+@keyframes disparition
+{
+	0%
+	{
+		opacity: 1;
+	}
+	100%
+	{
+		opacity: 0;
+	}
+}
+
 
 /******************************************************* Confirmation de la réservation **********************************************/
 #booking {
