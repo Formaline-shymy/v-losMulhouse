@@ -82,30 +82,34 @@
    		 <div class="map-container">
 		  <div id="mapid"></div>
 		 
-		 <div class="form">
+		 <div class="infoform">
             <div id="infoStation">
-                <h3>Détails de la station <br/> <span id="stationsName"></span></h3>
+                <h3>Détails de la station </h3>
+				<p>Nom de la station : <span id="stationName"></span></p>
                 <p>Adresse : <span id="address"></span></p>
                 <p>Nombre de places : <span id="bikestandNumber"></span></p>
                 <p>Nombre de vélos disponibles : <span id="bikeNumber"></span></p>
-                <p>Station est  <span id="stationsStatus"></span></p>
-                <button id="confirmationButton">Confirmer votre choix</button>
+                <p>Station est  <span id="stationStatus"></span></p>
+                				
+				<form id= "identification">
+	             <input id="nom" class= "sent" type="text" required="" placeholder= "Votre nom">
+                 <input id="prenom" class= "sent" type="text" required="" placeholder= "Votre prénom"  >
+				 <button  id="confirm" class="confirmbtn" >Confirmer votre choix</button>
+			    </form>
+				
             </div>
-			<div id="idform">
-			 <div class= "identification">
-	           <input id="nom" class= "sent" type="text" required="" placeholder= "Votre nom">
-               <input id="prenom" class= "sent" type="text" required="" placeholder= "Votre prénom">
-		     </div>
-			 
-		     <canvas id="myCanvas"></canvas>
+			
+			<div id="idform" class="form invisible">
+			  <canvas id="myCanvas"></canvas>
 			   <div id="feather">
                 <img src="Images/pioro.jpg"alt="">
 			   </div>
 			   
 			 <div class="b-block">
-			  <button id="clear" type="button">Effacer la signature</button>
-			  <button id="submit" type="button">Réserver</button>
+			  <button id="clear" class="reservationbtn invisible" >Effacer la signature</button>
+			  <button id="submit" class="reservationbtn invisible" > Réserver</button>
 			 </div>
+			 
 			</div>
          </div>  
 	    </div>
@@ -124,10 +128,10 @@
 	  <footer>
 	  <p>© 2019 Aneta LAURENT - Projet 3 OpenClassrooms.</p>
 	  </footer>
- <script type="text/javascript" src="ajax.js"></script>
-	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-   crossorigin=""></script>
+         <script type="text/javascript" src="ajax.js"></script>
+      	 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+          integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+          crossorigin=""></script>
    
 	     <script type="text/javascript" src="slider.js"></script>
 		 <script type="text/javascript" src="canvas.js"></script>
