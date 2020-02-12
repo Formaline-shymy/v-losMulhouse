@@ -25,11 +25,11 @@ class Timer{
 
 
    start(){
-      this.confirmButton.addEventListener("click", () => {// click on 'Confirmer votre choix' Button
+        this.confirmButton.addEventListener("click", () => {// click on 'Confirmer votre choix' Button
 	   
-	     //recupération des données du Local Storage
-          let autoSurname = document.getElementById("surname")
-           let autoName = document.getElementById("name")
+	     //Storage
+            let autoSurname = document.getElementById("surname")
+            let autoName = document.getElementById("name")
            	if(localStorage){
 			autoSurname.value = localStorage.getItem("your family name :");
 			autoName.value = localStorage.getItem("your name :");
@@ -49,9 +49,18 @@ class Timer{
 		this.undoButton.style.opacity = "1";
 		this.infoStation.style.opacity = "0";
 		this.drawform.style.display = "none";
-	    this.countDown();
-	    this.calcMinutes();       
-        this.calcSeconds();
+	    this.identification.style.display = "none";
+		
+		let x = window.matchMedia("(max-width: 767px)")
+		if (x.matches) { // If media query matches the application container (section id = "search") becomes shorter on small devices 
+		document.getElementById("search").style.height = "865px"; 
+		} 
+
+		this.countDown();
+		this.calcMinutes();       
+		this.calcSeconds();
+	   
+	   
 	   
      })
 	}//--end of start
@@ -95,6 +104,7 @@ class Timer{
 			this.identification.style.display = "none";
 			this.undoButton.style.opacity = "0";
 			this.infoStation.style.opacity = "1";
+			document.getElementById("search").style.height = "initial"; 
 			sessionStorage.clear();
 			}	
 	   }, 1000);
@@ -126,6 +136,7 @@ class Timer{
 		this.undoButton.style.opacity = "0";
 		this.infoStation.style.opacity = "1";
 		this.infoStation.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+		document.getElementById("search").style.height = "initial"; 
 		sessionStorage.clear();
 	 })
 	}//--end of cancel
