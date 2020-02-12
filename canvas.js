@@ -24,6 +24,8 @@ class Canvas{
 	this.resetCanvas();
 	this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	this.cancelReservCanvas();
+	this.tactileWriting();
+
     
 	};// -- end of constructor
 
@@ -62,6 +64,9 @@ class Canvas{
 	    }
     });
     }; //-- end of  mouse Move Event
+	
+	
+	
 	
 	
 //Stop writing when releasing a mouse button
@@ -103,6 +108,23 @@ class Canvas{
 		 
         });
   }//--end of cancelCanvas
+  
+  tactileWriting(){
+            //dessin avec événement tactile de mouvement   
+this.canvas.addEventListener("touchstart", (e) => {			
+           	this.write = true
+            this.mouseX  = e.touch[0].clientX - this.canvas.getBoundingClientRect().left;
+            this.mouseY= e.touch[0].clientY - this.canvas.getBoundingClientRect().top;
+            this.startWriting();
+            this.lastPositionX = e.touch[0].clientX - this.canvas.getBoundingClientRect().left
+            this.lastPositionY = e.touch[0].clientY - this.canvas.getBoundingClientRect().top
+            e.preventDefault();
+        })
+  }
+
+
+    
+  
   
  
 }//--end of class Canvas
