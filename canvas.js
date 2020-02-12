@@ -1,4 +1,3 @@
-//attention un decalage apres le zoom!//
 class Canvas{
     constructor(){
 	this.canvas = document.getElementById("myCanvas");
@@ -7,7 +6,8 @@ class Canvas{
 
 	this.write = false;
 	this.clearButton = document.getElementById("clear");
-	this.submitButton = document.getElementById("submit");
+	this.confirmButton = document.getElementById("confirm");
+	this.undoButton = document.getElementById("undo");
     this.context.lineWidth = 5; //  line width
 	this.context.lineCap = "round";// line with rounded end caps
 	this.context.strokeStyle = "green"//  line color
@@ -23,6 +23,7 @@ class Canvas{
 	this.clearCanvas();
 	this.resetCanvas();
 	this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+	this.cancelReservCanvas();
     
 	};// -- end of constructor
 
@@ -31,7 +32,7 @@ class Canvas{
 	this.canvas.addEventListener("mousedown", (e) => {
 	this.write = true;
 	this.clearButton.classList.remove("invisible");
-	this.submitButton.classList.remove("invisible");
+	this.confirmButton.classList.remove("invisible");
 	this.mouseX = e.clientX - this.canvas.getBoundingClientRect().left;// Get the horizontal coordinates -The client area is the current window.
     this.mouseY = e.clientY - this.canvas.getBoundingClientRect().top; // Get the vertical coordinates
 	this.lastPosition = {
@@ -65,7 +66,6 @@ class Canvas{
 	
 //Stop writing when releasing a mouse button
 	mouseUpEvent(){
-		//console.log("no world!"); 
 	   document.addEventListener("mouseup", (e) => this.write = false );
 	   };//-- end of Mouse Up Event
 	    
@@ -80,7 +80,7 @@ class Canvas{
 // Clear the signature  
     clearCanvas() {
         const clearButton = document.getElementById("clear");
-        clearButton.addEventListener("click", () => {
+        this.clearButton.addEventListener("click", () => {
             this.resetCanvas();
         });
                
@@ -92,8 +92,17 @@ class Canvas{
 		// parameters: (1:the x-axis, 2:the y-axis, 3: the rectangle's width and 4: it's height)
         this.write = false;
 		this.clearButton.classList.add("invisible");
-	    this.submitButton.classList.add("invisible");
+	    this.confirmButton.classList.add("invisible");
     };//--end reset 
   
-
+  
+  // Make the canvas reset and disapear when the reservation is canceled
+  cancelReservCanvas(){
+	  this.undoButton.addEventListener("click" , () =>{
+	  this.resetCanvas();
+		 
+        });
+  }//--end of cancelCanvas
+  
+ 
 }//--end of class Canvas

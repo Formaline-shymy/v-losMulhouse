@@ -14,7 +14,7 @@ class Slider{
 		this.slides[this.currentSlide].classList.add("visible");
         this.slideInterval;
 		this.changeSlide;
-		
+			
     }//-- -- end constructor 
     
     
@@ -147,8 +147,9 @@ class Slider{
         }
 		});
 	};//-end key control
-    	
-        
+
+	
+   
 }//-- end class slider --
 
 
