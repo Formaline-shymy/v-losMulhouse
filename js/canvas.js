@@ -96,8 +96,7 @@ this.canvas.addEventListener("touchstart", (e) => {
         this.canvas.addEventListener("touchmove", (e)=> {
              if(this.write){
                 let touch = e.touches[0];
-		this.clearButton.classList.remove("invisible");
-	    this.confirmButton.classList.remove("invisible");
+		
                 this.mouseX = touch.clientX - this.canvas.getBoundingClientRect().left;
                 this.mouseY = touch.clientY - (this.canvas.getBoundingClientRect().top+window.scrollX);
                 this.context.beginPath();
