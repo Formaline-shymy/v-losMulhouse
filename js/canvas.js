@@ -80,39 +80,42 @@ class Canvas{
 	   };// --end of mouseleave
 	
 tactileWriting(){	
-this.canvas.addEventListener("touchstart", (e) => {
-            let touch = e.touches[0];
-            this.write = true;
-            this.mouseX = touch.clientX - this.canvas.getBoundingClientRect().left;
-            this.mouseY = touch.clientY - (this.canvas.getBoundingClientRect().top+window.scrollX);
-            this.lastPosition = {
-                x: this.mouseX,
-                y: this.mouseY
-            };
-        });
+this.canvas.addEventListener("touchstart", function(e)
+        {
+            // Mouse down location
+            let mouseX = (e.changedTouches ? e.changedTouches[0].pageX : e.pageX) - this.offsetLeft,
+                mouseY = (e.changedTouches ? e.changedTouches[0].pageY : e.pageY) - this.offsetTop;
 
-        this.canvas.addEventListener("touchmove", (e)=> {
-             if(this.write){
-                let touch = e.touches[0];
-                this.mouseX = touch.clientX - this.canvas.getBoundingClientRect().left;
-                this.mouseY = touch.clientY - (this.canvas.getBoundingClientRect().top+window.scrollX);
-                this.context.beginPath();
-                this.context.moveTo(this.lastPosition.x, this.lastPosition.y);
-                this.context.lineTo(this.mouseX, this.mouseY);
-                this.context.closePath();
-                this.context.strokeStyle;
-                this.context.stroke();
-                this.lastPosition = {
-                  x: this.mouseX,
-                  y: this.mouseY
-                };
+            paint = true;
+            Signature.addClick(mouseX, mouseY, false);
+            Signature.redraw();
+        }, false);
+        
+        //on bouge sur le tactile
+        this.canvas.addEventListener("touchmove", function(e){
+            let mouseX = (e.changedTouches ? e.changedTouches[0].pageX : e.pageX) - this.offsetLeft,
+                mouseY = (e.changedTouches ? e.changedTouches[0].pageY : e.pageY) - this.offsetTop;
+
+            if(write){
+                Signature.addClick(mouseX, mouseY, true);
+                Signature.redraw();
             }
-        });
+            e.preventDefault()
+        }, false);
+        
+        //on lache le tactile
+        this.canvas.addEventListener("touchend", function(e){
+            this.write = false;
+        }, false);
 
-        this.canvas.addEventListener("touchend", (e) => this.write=false );
-
-        this.canvas.addEventListener("touchleave", (e) =>this.write=false );
-
+    }
+    
+    //Permet d'enregistrer les données de la souris sous forme de tableau
+    addClick(x, y, dragging)
+    {
+        clickX.push(x);
+        clickY.push(y);
+        clickDrag.push(dragging);
     }
   
 // Clear the signature  
