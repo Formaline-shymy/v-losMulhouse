@@ -83,10 +83,10 @@ tactileWriting(){
 this.canvas.addEventListener("touchstart", (e) => {
             let touch = e.touches[0];
             this.write = true;
-	    this.clearButton.classList.remove("invisible");
-	    this.confirmButton.classList.remove("invisible");
-            this.mouseX = touch.clientX - this.canvas.getBoundingClientRect().left;
+	    this.mouseX = touch.clientX - this.canvas.getBoundingClientRect().left;
             this.mouseY = touch.clientY - (this.canvas.getBoundingClientRect().top+window.scrollX);
+	         this.clearButton.classList.remove("invisible");
+	    this.confirmButton.classList.remove("invisible");
             this.lastPosition = {
                 x: this.mouseX,
                 y: this.mouseY
