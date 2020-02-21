@@ -1,32 +1,31 @@
 class Timer{
-        constructor(ms=1200000, minTimer="min", secTimer="sec"){
-        this.time = ms/1000;    
-        this.minTimer = document.getElementById("min");       
-        this.secTimer = document.getElementById("sec");
-		this.textReservation = document.getElementById("timer");
-		this.nobooking = document.getElementById("nobooking");
-		this.bookingResult = document.getElementById("bookingresult");
-		this.identification = document.getElementById("identification");
-		this.drawform= document.getElementById("drawform");
-		this.minTimer.textContent = this.minute;  
-        this.secTimer.textContent = this.second;
-		this.confirmButton = document.getElementById("confirm");	
-        this.start();
-	    this.titlebooking = document.getElementById("titlebooking");
-		this.undoButton = document.getElementById("undo");
-		this.cancel();
-		this.canvas = document.getElementById("myCanvas");
-		this.context = this.canvas.getContext("2d");
-	   	this.nameStation = document.getElementById("stationName");
-		this.addressStation = document.getElementById("address");
-		this.infoStation = document.getElementById("infoStation");
-		}//--end of constructor
+    constructor(ms=1200000, minTimer="min", secTimer="sec"){
+    this.time = ms/1000;    
+    this.minTimer = document.getElementById("min");       
+    this.secTimer = document.getElementById("sec");
+	this.textReservation = document.getElementById("timer");
+	this.nobooking = document.getElementById("nobooking");
+	this.bookingResult = document.getElementById("bookingresult");
+	this.identification = document.getElementById("identification");
+	this.drawform= document.getElementById("drawform");
+	this.minTimer.textContent = this.minute;  
+    this.secTimer.textContent = this.second;
+	this.confirmButton = document.getElementById("confirm");	
+    this.start();
+	this.titlebooking = document.getElementById("titlebooking");
+	this.undoButton = document.getElementById("undo");
+	this.cancel();
+	this.canvas = document.getElementById("myCanvas");
+	this.context = this.canvas.getContext("2d");
+	this.nameStation = document.getElementById("stationName");
+	this.addressStation = document.getElementById("address");
+	this.infoStation = document.getElementById("infoStation");
+	}//--end of constructor
    
 
 
    start(){
         this.confirmButton.addEventListener("click", () => {// click on 'Confirmer votre choix' Button
-	   
 	     //Storage
             let autoSurname = document.getElementById("surname")
             let autoName = document.getElementById("name")
@@ -42,8 +41,6 @@ class Timer{
 			sessionStorage.getItem("your station :");
 			sessionStorage.getItem("station address :");
 			
-			
-	
 	    this.titlebooking.scrollIntoView();
 	    this.nobooking.style.display="none";
 		this.undoButton.style.opacity = "1";
@@ -60,22 +57,15 @@ class Timer{
 		this.calcMinutes();       
 		this.calcSeconds();
 	   
-	   
-	   
      })
 	}//--end of start
 
- 
-	
   
     countDown(){ 
 	   clearInterval(this.chronoInterval);
-	   this.time = 1200000/1000;  
-	   this.chronoInterval = setInterval(() => { 
-		
-		
-			
-        this.time--; 
+	    this.time = 1200000/1000;  
+	    this.chronoInterval = setInterval(() => { 		
+        this.time--; // (decrement)
         if(this.time >= 0){    
             this.bookingResult.classList.remove("invisible"); 		
             this.calcMinutes();     
@@ -122,7 +112,7 @@ class Timer{
     }//--end of calcSconds
   
  
-	//To cancel the reservation before it expire
+	//To cancel the reservation before it expires
 	cancel(){
 		this.undoButton.addEventListener("click" , () =>{
 		clearInterval(this.chronoInterval);

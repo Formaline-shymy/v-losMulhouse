@@ -63,15 +63,14 @@ class Map{
 //Fill in the idform --if the data has been already registerd before//
    prefillForm(){
 	        this.undoButton.style.opacity = "0";
-     if((localStorage.getItem("your family name :")) && (localStorage.getItem("your name :"))) {
-            this.userSurname.value = localStorage.getItem("your family name :");
-			this.userName.value = localStorage.getItem("your name :");
-			sessionStorage.removeItem("your station :");
-			sessionStorage.removeItem("station address :");
-			sessionStorage.removeItem("resting time min :");
-			sessionStorage.removeItem("resting time sec :");
-			
-	 }
+				if((localStorage.getItem("your family name :")) && (localStorage.getItem("your name :"))) {
+					this.userSurname.value = localStorage.getItem("your family name :");
+					this.userName.value = localStorage.getItem("your name :");
+					sessionStorage.removeItem("your station :");
+					sessionStorage.removeItem("station address :");
+					sessionStorage.removeItem("resting time min :");
+					sessionStorage.removeItem("resting time sec :");
+				}
 	}
     
 	
@@ -80,8 +79,7 @@ class Map{
             let results = JSON.parse(reponse);
 			
 			results.forEach(station => {
-			 
-                this.latLng = [station.position.lat, station.position.lng];
+			    this.latLng = [station.position.lat, station.position.lng];
 				
                 if(station.status === 'CLOSED'){
                     this.marker = L.marker([station.position.lat,station.position.lng], {icon: this.blackIcon});
@@ -89,7 +87,6 @@ class Map{
 				} 
 				
 				else if(station.status === 'OPEN'){
-					
 					if (station.available_bikes <=3 && station.available_bikes > 0 ){
 					this.marker = L.marker([station.position.lat,station.position.lng], {icon: this.orangeIcon});
 					this.marker.addTo(this.mymap);
@@ -129,8 +126,7 @@ class Map{
 
 					 
 				//Show station details
-			        
-                    let stationNameField = document.getElementById("stationName");
+			        let stationNameField = document.getElementById("stationName");
                     let adresseField = document.getElementById("address");
                     let nbrePlacesField = document.getElementById("bikestandNumber");
                     let nbreVelosField = document.getElementById("bikeNumber");
@@ -142,8 +138,7 @@ class Map{
                     nbreVelosField.textContent = station.available_bikes;
 					stationStatusField.textContent = status;
 				
-					
-                    
+					                    
 					if(station.status === 'CLOSED'){
 						console.log("black");
 						 document.getElementById("stationStatus").style.color = "black";
@@ -155,8 +150,7 @@ class Map{
 						 						 
 						
 					} else if (station.status === 'OPEN' ){
-						 
-						 if (station.available_bikes <= 0) {
+						    if (station.available_bikes <= 0) {
 					     	console.log("red");
                             document.getElementById("stationStatus").style.color = "red";
 						    document.getElementById("stationStatus").style.textTransform = "uppercase"; 

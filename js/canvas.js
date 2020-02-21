@@ -25,8 +25,8 @@ class Canvas{
 	this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	this.cancelReservCanvas();
 	this.tactileWriting();
-    
 	};// -- end of constructor
+
 
  // Start Writing in the canvas when pressing a mouse button
 	startWriting(){
@@ -40,7 +40,6 @@ class Canvas{
                 x: this.mouseX,
                 y: this.mouseY
             };
-
     }); }//--- end of start writing
 
   
@@ -65,51 +64,49 @@ class Canvas{
     }; //-- end of  mouse Move Event
 	
 	
-	
-	
-	
 //Stop writing when releasing a mouse button
 	mouseUpEvent(){
-	   document.addEventListener("mouseup", (e) => this.write = false );
-	   };//-- end of Mouse Up Event
+	document.addEventListener("mouseup", (e) => this.write = false );
+	};//-- end of Mouse Up Event
 	    
 		
 //Stop writing when moving the mouse pointer out of a canvas
 	mouseLeaveEvent(){
-	     this.canvas.addEventListener("mouseleave", (e) => this.write = false ); 
-	   };// --end of mouseleave
+	this.canvas.addEventListener("mouseleave", (e) => this.write = false ); 
+	};// --end of mouseleave
 	
-tactileWriting(){	
-this.canvas.addEventListener("touchstart", (e) => {
-            let touch = e.touches[0];
-            this.write = true;
-	    this.mouseX = touch.clientX - this.canvas.getBoundingClientRect().left;
-            this.mouseY = touch.clientY - (this.canvas.getBoundingClientRect().top+window.scrollX);
-	         
-            this.lastPosition = {
+	
+//Writing on mobile with a finger 
+	tactileWriting(){	
+	this.canvas.addEventListener("touchstart", (e) => {
+    let touch = e.touches[0];
+    this.write = true;
+	this.mouseX = touch.clientX - this.canvas.getBoundingClientRect().left;
+    this.mouseY = touch.clientY - (this.canvas.getBoundingClientRect().top+window.scrollX);
+    this.lastPosition = {
                 x: this.mouseX,
                 y: this.mouseY
-            };
-			e.preventDefault();
+    };
+			
+			e.preventDefault();// not to scroll while writing
         });
 
-        this.canvas.addEventListener("touchmove", (e)=> {
-             if(this.write){
-                let touch = e.touches[0];
-		
-                this.mouseX = touch.clientX - this.canvas.getBoundingClientRect().left;
-                this.mouseY = touch.clientY - (this.canvas.getBoundingClientRect().top+window.scrollX);
-                this.context.beginPath();
-                this.context.moveTo(this.lastPosition.x, this.lastPosition.y);
-                this.context.lineTo(this.mouseX, this.mouseY);
-                this.context.closePath();
-                this.context.strokeStyle;
-                this.context.stroke();
-                this.lastPosition = {
-                  x: this.mouseX,
-                  y: this.mouseY
+    this.canvas.addEventListener("touchmove", (e)=> {
+    if(this.write){
+        let touch = e.touches[0];
+        this.mouseX = touch.clientX - this.canvas.getBoundingClientRect().left;
+        this.mouseY = touch.clientY - (this.canvas.getBoundingClientRect().top+window.scrollX);
+        this.context.beginPath();
+        this.context.moveTo(this.lastPosition.x, this.lastPosition.y);
+        this.context.lineTo(this.mouseX, this.mouseY);
+        this.context.closePath();
+        this.context.strokeStyle;
+        this.context.stroke();
+        this.lastPosition = {
+                 x: this.mouseX,
+                 y: this.mouseY
                 };
-				e.preventDefault()
+		e.preventDefault()
             }
         });
 
@@ -124,8 +121,7 @@ this.canvas.addEventListener("touchstart", (e) => {
         const clearButton = document.getElementById("clear");
         this.clearButton.addEventListener("click", () => {
             this.resetCanvas();
-        });
-               
+        });         
     };//--end clearCanvas
 
 
@@ -147,10 +143,4 @@ this.canvas.addEventListener("touchstart", (e) => {
   }//--end of cancelCanvas
   
 
-
-
-    
-  
-  
- 
 }//--end of class Canvas
